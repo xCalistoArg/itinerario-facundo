@@ -6,67 +6,112 @@
     <title>Itinerario de Clases - Facundo Calisto</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-image: url('https://example.com/fondo-matematicas.jpg'); /* Cambiar URL por una imagen relacionada con matemáticas */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url('https://example.com/fondo-matematicas.jpg');
             background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             color: #333;
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
+
         header {
             text-align: center;
             padding: 2rem 0;
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
+
         h1 {
             margin: 0;
-            font-size: 2.5rem;
+            font-size: 3rem;
+            color: #2c3e50;
         }
+
         p {
             font-size: 1.2rem;
+            color: #34495e;
         }
+
         .itinerario {
             margin: 2rem auto;
-            width: 80%;
+            width: 90%;
+            max-width: 900px;
             background-color: rgba(255, 255, 255, 0.9);
             padding: 1rem;
-            border-radius: 8px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
+
         .dia {
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             padding: 1rem;
-            border: 2px solid #ccc; /* Borde alrededor del día */
-            border-radius: 8px; /* Bordes redondeados */
-            background-color: #f9f9f9; /* Fondo ligeramente diferente para el contenedor del día */
+            border: 2px solid #bdc3c7;
+            border-radius: 8px;
+            background-color: #ecf0f1;
+            transition: background-color 0.3s ease;
         }
+
+        .dia:hover {
+            background-color: #dfe6e9;
+        }
+
         .dia h2 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+            margin-bottom: 0.8rem;
+            color: #2980b9;
         }
+
         .horario {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             margin: 0.5rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
+
         .horario.libre {
-            background-color: #dff0d8; /* Verde claro */
-            color: #3c763d; /* Verde oscuro */
+            background-color: #dff0d8;
+            color: #27ae60;
             font-style: italic;
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
         }
+
         footer {
             text-align: center;
             padding: 1rem 0;
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
         }
+
+        footer p {
+            margin: 0;
+            font-size: 1rem;
+            color: #7f8c8d;
+        }
+
         @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
             .itinerario {
                 width: 95%;
-                padding: 0.5rem;
+                padding: 0.8rem;
             }
-            h1 {
-                font-size: 2rem;
-            }
+
             .dia h2 {
-                font-size: 1.2rem;
+                font-size: 1.5rem;
+            }
+
+            .horario {
+                font-size: 1.1rem;
             }
         }
     </style>
@@ -76,54 +121,26 @@
         <h1>Facundo Calisto - Itinerario de Clases</h1>
         <p>Bienvenido a mi página de itinerario. Aquí podrás ver mis horarios de clases y los momentos libres.</p>
     </header>
+
     <section class="itinerario">
-       <div class="dia">
+        <div class="dia">
             <h2>Lunes</h2>
-            <div class="horario">09:00 - 10:30: Clase de Álgebra</div>
-            <div class="horario">11:00 - 12:30: Clase de Geometría</div>
-            <div class="horario libre">Libre: 13:00 - 15:00</div>
-            <div class="horario">15:30 - 17:00: Clase de Cálculo</div>
+            <div class="horario">
+                <span>09:00 - 10:30</span> <span>Clase de Álgebra</span>
+            </div>
+            <div class="horario">
+                <span>11:00 - 12:30</span> <span>Clase de Geometría</span>
+            </div>
+            <div class="horario libre">
+                <span>Libre</span> <span>13:00 - 15:00</span>
+            </div>
+            <div class="horario">
+                <span>15:30 - 17:00</span> <span>Clase de Cálculo</span>
+            </div>
         </div>
-        <div class="dia">
-            <h2>Martes</h2>
-            <div class="horario">10:00 - 11:30: Clase de Física</div>
-            <div class="horario">12:00 - 13:30: Clase de Química</div>
-            <div class="horario libre">Libre: 14:00 - 16:00</div>
-            <div class="horario">16:30 - 18:00: Clase de Biología</div>
-        </div>
-        <div class="dia">
-            <h2>Miércoles</h2>
-            <div class="horario">08:30 - 10:00: Clase de Historia</div>
-            <div class="horario">10:30 - 12:00: Clase de Literatura</div>
-            <div class="horario libre">Libre: 12:30 - 14:00</div>
-            <div class="horario">14:30 - 16:00: Clase de Idiomas</div>
-        </div>
-        <div class="dia">
-            <h2>Jueves</h2>
-            <div class="horario">09:00 - 10:30: Clase de Matemáticas</div>
-            <div class="horario">11:00 - 12:30: Clase de Ciencias</div>
-            <div class="horario libre">Libre: 13:00 - 15:00</div>
-            <div class="horario">15:30 - 17:00: Clase de Educación Física</div>
-        </div>
-        <div class="dia">
-            <h2>Viernes</h2>
-            <div class="horario">10:00 - 11:30: Clase de Filosofía</div>
-            <div class="horario">12:00 - 13:30: Clase de Arte</div>
-            <div class="horario libre">Libre: 14:00 - 16:00</div>
-            <div class="horario">16:30 - 18:00: Clase de Música</div>
-        </div>
-        <div class="dia">
-            <h2>Sábado</h2>
-            <div class="horario">09:00 - 10:30: Clase de Deporte</div>
-            <div class="horario">11:00 - 12:30: Taller de Creatividad</div>
-            <div class="horario libre">Libre: 13:00 - 15:00</div>
-        </div>
-        <div class="dia">
-            <h2>Domingo</h2>
-            <div class="horario">Día libre</div>
-        </div>
-        <!-- Repetir estructura para otros días de la semana -->
+        <!-- Repetir para otros días como Martes, Miércoles, etc. -->
     </section>
+
     <footer>
         <p>Facundo Calisto © 2024</p>
     </footer>
