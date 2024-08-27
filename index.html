@@ -53,10 +53,7 @@
             border-radius: 8px;
             background-color: #ecf0f1;
             transition: background-color 0.3s ease;
-        }
-
-        .dia:hover {
-            background-color: #dfe6e9;
+            display: none; /* Escondido por defecto */
         }
 
         .dia h2 {
@@ -79,6 +76,16 @@
             font-style: italic;
             padding: 0.3rem 0.6rem;
             border-radius: 4px;
+        }
+
+        .selector-dia {
+            margin: 1rem 0;
+            text-align: center;
+        }
+
+        .selector-dia select {
+            padding: 0.5rem;
+            font-size: 1rem;
         }
 
         footer {
@@ -122,7 +129,7 @@
         <p>Bienvenido a mi página de itinerario. Aquí podrás ver mis horarios de clases y los momentos libres.</p>
     </header>
 
- <div class="selector-dia">
+    <div class="selector-dia">
         <label for="dias">Selecciona un día:</label>
         <select id="dias" onchange="mostrarDia()">
             <option value="">--Selecciona--</option>
@@ -137,7 +144,7 @@
     </div>
 
     <section class="itinerario">
-        <div class="dia">
+        <div class="dia" id="lunes">
             <h2>Lunes</h2>
             <div class="horario">
                 <span>08:00 - 09:30</span> <span>Clase de Álgebra</span>
@@ -153,7 +160,7 @@
             </div>
         </div>
 
-        <div class="dia">
+        <div class="dia" id="martes">
             <h2>Martes</h2>
             <div class="horario">
                 <span>09:00 - 10:30</span> <span>Clase de Química</span>
@@ -169,7 +176,7 @@
             </div>
         </div>
 
-        <div class="dia">
+        <div class="dia" id="miercoles">
             <h2>Miércoles</h2>
             <div class="horario">
                 <span>08:30 - 10:00</span> <span>Clase de Matemáticas</span>
@@ -185,7 +192,7 @@
             </div>
         </div>
 
-        <div class="dia">
+        <div class="dia" id="jueves">
             <h2>Jueves</h2>
             <div class="horario">
                 <span>09:00 - 10:30</span> <span>Clase de Ciencias</span>
@@ -201,7 +208,7 @@
             </div>
         </div>
 
-        <div class="dia">
+        <div class="dia" id="viernes">
             <h2>Viernes</h2>
             <div class="horario">
                 <span>08:00 - 09:30</span> <span>Clase de Filosofía</span>
@@ -217,7 +224,7 @@
             </div>
         </div>
 
-        <div class="dia">
+        <div class="dia" id="sabado">
             <h2>Sábado</h2>
             <div class="horario">
                 <span>09:00 - 10:30</span> <span>Clase de Deporte</span>
@@ -230,7 +237,7 @@
             </div>
         </div>
 
-        <div class="dia">
+        <div class="dia" id="domingo">
             <h2>Domingo</h2>
             <div class="horario">
                 <span>Día libre</span>
@@ -241,5 +248,20 @@
     <footer>
         <p>Facundo Calisto © 2024</p>
     </footer>
+
+    <script>
+        function mostrarDia() {
+            const diaSeleccionado = document.getElementById('dias').value;
+            const dias = document.querySelectorAll('.dia');
+            
+            dias.forEach(dia => {
+                dia.style.display = 'none'; // Esconde todos los días
+            });
+
+            if (diaSeleccionado) {
+                document.getElementById(diaSeleccionado).style.display = 'block'; // Muestra el día seleccionado
+            }
+        }
+    </script>
 </body>
 </html>
