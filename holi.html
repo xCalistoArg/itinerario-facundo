@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Itinerario de Clases - Facundo Calisto</title>
+    <style>
+        /* Estilos CSS se mantienen iguales */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJM-jIJTNuDD8kvXGTTmb3zSvpy7RArF30oA&s');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem 0;
+            background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 3rem;
+            color: #2c3e50;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #34495e;
+        }
+
+        .itinerario {
+            margin: 2rem auto;
+            width: 90%;
+            max-width: 900px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .dia {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            border: 2px solid #bdc3c7;
+            border-radius: 8px;
+            background-color: #ecf0f1;
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: opacity 0.5s ease, max-height 0.5s ease;
+        }
+
+        .dia.mostrar {
+            opacity: 1;
+            max-height: 1000px;
+        }
+
+        .dia h2 {
+            font-size: 1.8rem;
+            margin-bottom: 0.8rem;
+            color: #2980b9;
+        }
+
+        .horario {
+            font-size: 1.3rem;
+            margin: 0.5rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .horario.libre {
+            background-color: #dff0d8;
+            color: #27ae60;
+            font-style: italic;
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+        }
+
+        .selector-dia {
+            margin: 1rem 0;
+            text-align: center;
+        }
+
+        .selector-dia select {
+            padding: 0.5rem;
+            font-size: 1rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1rem;
+            color: #7f8c8d;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .itinerario {
+                width: 95%;
+                padding: 0.8rem;
+            }
+
+            .dia h2 {
+                font-size: 1.5rem;
+            }
+
+            .horario {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Facundo Calisto - Horarios de Clases</h1>
+        <p>Bienvenido a mi página de horarios. Aquí podrás ver mi itinerario de clases y los momentos libres.</p>
+    </header>
+
+    <div class="selector-dia">
+        <label for="dias">Selecciona un día:</label>
+        <select id="dias" onchange="mostrarDia()">
+            <option value="">--Selecciona--</option>
+            <option value="lunes">Lunes</option>
+            <option value="martes">Martes</option>
+            <option value="miercoles">Miércoles</option>
+            <option value="jueves">Jueves</option>
+            <option value="viernes">Viernes</option>
+            <option value="sabado">Sábado</option>
+            <option value="domingo">Domingo</option>
+        </select>
+    </div>
+
+    <section class="itinerario">
+        <div class="dia" id="lunes">
+            <h2>Lunes</h2>
+            <div class="horario">
+                <span>10:00 - 12:00</span> <span>CLASES A.</span>
+            </div>
+            <div class="horario libre">
+                <span>Libre</span> <span>17:00 - 21:00</span>
+            </div>
+        </div>
+
+        <div class="dia" id="martes">
+            <h2>Martes</h2>
+            <div class="horario">
+                <span>10:00 - 12:00</span> <span>CLASES Abel.</span>
+            </div>
+            <div class="horario">
+                <span>13:00 - 15:00</span> <span>CLASES Tita.</span>
+            <div class="horario">
+                <span>15:00 - 16:00</span> <span>CLASES Trini.</span>
+            <div class="horario libre">
+                <span>Libre</span> <span>17:30 - 21:30</span>
+            </div>
+        </div>
+
+        <div class="dia" id="miercoles">
+            <h2>Miércoles</h2>
+            <div class="horario">
+                <span>10:00 - 12:00</span> <span>CLASES A.</span>
+            </div>
+            <div class="horario libre">
+                <span>Libre</span> <span>16:30 - 21:30</span>
+            </div>
+        </div>
+
+        <div class="dia" id="jueves">
+            <h2>Jueves</h2>
+            <div class="horario">
+                <span>10:00 - 12:00</span> <span>CLASES T.</span>
+            </div>
+            <div class="horario">
+                <span>14:00 - 16:20</span> <span>CLASES B.</span>
+            </div>
+            <div class="horario libre">
+                <span>Libre</span> <span>17:00 - 21:00</span>
+            </div>
+        </div>
+
+        <div class="dia" id="viernes">
+            <h2>Viernes</h2>
+            <div class="horario">
+                <span>10:00 - 12:00</span> <span>CLASES MABEL</span>
+            </div>
+            <div class="horario libre">
+                <span>Libre</span> <span>17:00 - 21:00</span>
+            </div>
+        </div>
+
+        <div class="dia" id="sabado">
+            <h2>Sábado</h2>
+            <div class="horario">
+                <span>13:00 - 15:00</span> <span>CLASES CARLA</span>
+            </div>
+            <div class="horario">
+                <span>15:00 - 17:00</span> <span>CLASES BAUTI</span>
+            </div>
+            <div class="horario libre">
+                <span>Libre</span> <span>17:30 - 19:30</span>
+            </div>
+        </div>
+
+        <div class="dia" id="domingo">
+            <h2>Domingo</h2>
+            <div class="horario">
+                <span>Día libre</span>
+            </div
