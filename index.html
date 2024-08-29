@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Itinerario de Clases - Facundo Calisto</title>
     <style>
+        /* Estilos CSS se mantienen iguales */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJM-jIJTNuDD8kvXGTTmb3zSvpy7RArF30oA&s');
@@ -52,15 +53,15 @@
             border: 2px solid #bdc3c7;
             border-radius: 8px;
             background-color: #ecf0f1;
-            opacity: 0; /* Comienza transparente */
+            opacity: 0;
             max-height: 0;
             overflow: hidden;
-            transition: opacity 0.5s ease, max-height 0.5s ease; /* Transición de opacidad y altura */
+            transition: opacity 0.5s ease, max-height 0.5s ease;
         }
 
         .dia.mostrar {
-            opacity: 1; /* Hace visible el contenido */
-            max-height: 1000px; /* Despliega el contenido */
+            opacity: 1;
+            max-height: 1000px;
         }
 
         .dia h2 {
@@ -168,10 +169,8 @@
             </div>
             <div class="horario">
                 <span>13:00 - 15:00</span> <span>CLASES Tita.</span>
-            </div>
             <div class="horario">
                 <span>15:00 - 16:00</span> <span>CLASES Trini.</span>
-            </div>
             <div class="horario libre">
                 <span>Libre</span> <span>17:30 - 21:30</span>
             </div>
@@ -232,8 +231,7 @@
     </section>
 
     <footer>
-        <p>Facundo Calisto © 2024
-        </p>
+        <p>Facundo Calisto © 2024</p>
     </footer>
 
     <script>
@@ -242,14 +240,14 @@
             const dias = document.querySelectorAll('.dia');
             
             dias.forEach(dia => {
-                dia.classList.remove('mostrar'); // Remueve la clase 'mostrar' de todos los días
+                dia.classList.remove('mostrar');
             });
 
             if (diaSeleccionado) {
                 const dia = document.getElementById(diaSeleccionado);
-                dia.classList.add('mostrar'); // Añade la clase 'mostrar' al día seleccionado
+                dia.classList.add('mostrar');
             }
         }
     </script>
 </body>
-    </html>
+</html>
