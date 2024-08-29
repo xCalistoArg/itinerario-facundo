@@ -52,8 +52,15 @@
             border: 2px solid #bdc3c7;
             border-radius: 8px;
             background-color: #ecf0f1;
-            transition: background-color 0.3s ease;
-            display: none; /* Escondido por defecto */
+            opacity: 0; /* Comienza transparente */
+            max-height: 0;
+            overflow: hidden;
+            transition: opacity 0.5s ease, max-height 0.5s ease; /* Transición de opacidad y altura */
+        }
+
+        .dia.mostrar {
+            opacity: 1; /* Hace visible el contenido */
+            max-height: 1000px; /* Despliega el contenido */
         }
 
         .dia h2 {
@@ -155,7 +162,6 @@
             <div class="horario libre">
                 <span>Libre</span> <span>17:00 - 21:00</span>
             </div>
-           
         </div>
 
         <div class="dia" id="martes">
@@ -169,7 +175,6 @@
             <div class="horario libre">
                 <span>Libre</span> <span>17:00 - 21:00</span>
             </div>
-           
         </div>
 
         <div class="dia" id="miercoles">
@@ -183,7 +188,6 @@
             <div class="horario libre">
                 <span>Libre</span> <span>17:30 - 21:30</span>
             </div>
-          
         </div>
 
         <div class="dia" id="jueves">
@@ -197,7 +201,6 @@
             <div class="horario libre">
                 <span>Libre</span> <span>17:30 - 21:00</span>
             </div>
-           
         </div>
 
         <div class="dia" id="viernes">
@@ -211,7 +214,6 @@
             <div class="horario libre">
                 <span>Libre</span> <span>17:00 - 21:00</span>
             </div>
-            
         </div>
 
         <div class="dia" id="sabado">
@@ -245,11 +247,12 @@
             const dias = document.querySelectorAll('.dia');
             
             dias.forEach(dia => {
-                dia.style.display = 'none'; // Esconde todos los días
+                dia.classList.remove('mostrar'); // Remueve la clase 'mostrar' de todos los días
             });
 
             if (diaSeleccionado) {
-                document.getElementById(diaSeleccionado).style.display = 'block'; // Muestra el día seleccionado
+                const dia = document.getElementById(diaSeleccionado);
+                dia.classList.add('mostrar'); // Añade la clase 'mostrar' al día seleccionado
             }
         }
     </script>
