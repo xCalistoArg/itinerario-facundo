@@ -4,134 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Itinerario de Clases - Facundo Calisto</title>
-    <!-- Enlaza el archivo CSS -->
     <link rel="stylesheet" href="css/styles.css">
-    <style>
-        /* Estilos CSS se mantienen iguales */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-image: url('https://pixabay.com/get/ge75296ef29877783e4018da4d212d0f1ae85ca998e6eaa7a84214c6e7b07a30b5b95435e45bd362404dd7633c665c36a.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
-
-        header {
-            text-align: center;
-            padding: 2rem 0;
-            background-color: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(5px);
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            margin: 0;
-            font-size: 3rem;
-            color: #2c3e50;
-        }
-
-        p {
-            font-size: 1.2rem;
-            color: #34495e;
-        }
-
-        .itinerario {
-            margin: 2rem auto;
-            width: 90%;
-            max-width: 900px;
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 1rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .dia {
-            margin-bottom: 1.5rem;
-            padding: 1rem;
-            border: 2px solid #bdc3c7;
-            border-radius: 8px;
-            background-color: #ecf0f1;
-            opacity: 0;
-            max-height: 0;
-            overflow: hidden;
-            transition: opacity 0.5s ease, max-height 0.5s ease;
-        }
-
-        .dia.mostrar {
-            opacity: 1;
-            max-height: 1000px;
-        }
-
-        .dia h2 {
-            font-size: 1.8rem;
-            margin-bottom: 0.8rem;
-            color: #2980b9;
-        }
-
-        .horario {
-            font-size: 1.3rem;
-            margin: 0.5rem 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .horario.libre {
-            background-color: #dff0d8;
-            color: #27ae60;
-            font-style: italic;
-            padding: 0.3rem 0.6rem;
-            border-radius: 4px;
-        }
-
-        .selector-dia {
-            margin: 1rem 0;
-            text-align: center;
-        }
-
-        .selector-dia select {
-            padding: 0.5rem;
-            font-size: 1rem;
-        }
-
-        footer {
-            text-align: center;
-            padding: 1rem 0;
-            background-color: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(5px);
-            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-            margin-top: 2rem;
-        }
-
-        footer p {
-            margin: 0;
-            font-size: 1rem;
-            color: #7f8c8d;
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5rem;
-            }
-
-            .itinerario {
-                width: 95%;
-                padding: 0.8rem;
-            }
-
-            .dia h2 {
-                font-size: 1.5rem;
-            }
-
-            .horario {
-                font-size: 1.1rem;
-            }
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -141,7 +14,7 @@
 
     <div class="selector-dia">
         <label for="dias">Selecciona un día:</label>
-        <select id="dias" onchange="mostrarDia()">
+        <select id="dias">
             <option value="">--Selecciona--</option>
             <option value="lunes">Lunes</option>
             <option value="martes">Martes</option>
@@ -171,10 +44,10 @@
             </div>
             <div class="horario">
                 <span>13:00 - 15:00</span> <span>CLASES Tita.</span>
-            </div> <!-- Cierre de div corregido -->
+            </div>
             <div class="horario">
                 <span>15:00 - 16:00</span> <span>CLASES Trini.</span>
-            </div> <!-- Cierre de div corregido -->
+            </div>
             <div class="horario libre">
                 <span>Libre</span> <span>17:30 - 21:30</span>
             </div>
@@ -238,7 +111,6 @@
         <p>Facundo Calisto © 2024</p>
     </footer>
 
-    <!-- Enlaza el archivo JavaScript -->
     <script src="js/script.js"></script>
 </body>
 </html>
