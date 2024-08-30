@@ -57,12 +57,17 @@ p {
     opacity: 0;
     max-height: 0;
     overflow: hidden;
-    transition: opacity 0.5s ease, max-height 0.5s ease;
+    position: absolute; /* Hace que no ocupe espacio */
+    width: 100%; /* Asegura que el div ocupa todo el ancho */
+    visibility: hidden; /* Oculta completamente el elemento */
+    transition: opacity 0.5s ease, max-height 0.5s ease, visibility 0.5s ease;
 }
 
 .dia.mostrar {
     opacity: 1;
     max-height: 1000px;
+    position: relative; /* Cambia a posición relativa cuando se muestra */
+    visibility: visible; /* Hace visible el elemento */
 }
 
 .dia h2 {
