@@ -68,6 +68,19 @@ p {
     max-height: 1000px;
     position: relative; /* Cambia a posición relativa cuando se muestra */
     visibility: visible; /* Hace visible el elemento */
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
 }
 
 .dia h2 {
