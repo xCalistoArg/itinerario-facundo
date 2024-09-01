@@ -5,11 +5,12 @@
     --border-color: #bdc3c7;
     --highlight-color: #dff0d8;
     --highlight-text-color: #27ae60;
+    --hover-color: #2c3e50;
 }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-image: url('https://pixabay.com/get/ge75296ef29877783e4018da4d212d0f1ae85ca998e6eaa7a84214c6e7b07a30b5b95435e45bd362404dd7633c665c36a.jpg');
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJM-jIJTNuDD8kvXGTTmb3zSvpy7RArF30oA&s');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -30,7 +31,7 @@ header {
 h1 {
     margin: 0;
     font-size: 3rem;
-    color: #2c3e50;
+    color: var(--primary-color);
 }
 
 p {
@@ -57,9 +58,9 @@ p {
     opacity: 0;
     max-height: 0;
     overflow: hidden;
-    position: absolute; /* Hace que no ocupe espacio */
-    width: 100%; /* Asegura que el div ocupa todo el ancho */
-    visibility: hidden; /* Oculta completamente el elemento */
+    position: absolute; /* Hace que no ocupe espacio cuando no está visible */
+    width: 100%;
+    visibility: hidden;
     transition: opacity 0.5s ease, max-height 0.5s ease, visibility 0.5s ease;
 }
 
@@ -67,7 +68,19 @@ p {
     opacity: 1;
     max-height: 1000px;
     position: relative; /* Cambia a posición relativa cuando se muestra */
-    visibility: visible; /* Hace visible el elemento */
+    visibility: visible;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .dia h2 {
@@ -82,6 +95,7 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .horario.libre {
@@ -92,15 +106,78 @@ p {
     border-radius: 4px;
 }
 
+.horario:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
 .selector-dia {
     margin: 1rem 0;
     text-align: center;
+    position: relative;
 }
 
 .selector-dia select {
-    padding: 0.5rem;
-    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+    font-size: 1.1rem;
     border-radius: 8px;
+    border: 2px solid var(--primary-color);
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    appearance: none; /* Oculta la flecha predeterminada */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: relative;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    width: 100%;
+    max-width: 300px;
+}
+
+.selector-dia select:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.selector-dia select:focus {
+    outline: none;
+    border-color: var(--highlight-text-color);
+    box-shadow: 0 0 10px rgba(39, 174, 96, 0.5);
+}
+
+.selector-dia::after {
+    content: "▼"; /* Añade una flecha personalizada */
+    font-size: 1rem;
+    color: var(--primary-color);
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none; /* Permite hacer clic en el selector sin interferencia */
+    transition: all 0.3s ease;
+}
+
+.selector-dia select:hover + ::after {
+    color: #fff;
+}
+
+.selector-dia select:focus + ::after {
+    color: var(--highlight-text-color);
+}
+
+.icon-only {
+    width: 24px;
+    height: 24px;
+    fill: var(--primary-color);
+    transition: fill 0.3s ease;
+    cursor: pointer;
+    vertical-align: middle;
+    margin-right: 0.5rem;
+}
+
+.icon-only:hover {
+    fill: var(--hover-color);
 }
 
 footer {
@@ -135,54 +212,8 @@ footer p {
     .horario {
         font-size: 1.1rem;
     }
-}
-.selector-dia select {
-    padding: 0.6rem 1.2rem;
-    font-size: 1.1rem;
-    border-radius: 8px;
-    border: 2px solid var(--primary-color);
-    background-color: var(--background-color);
-    color: var(--primary-color);
-    box-shadow: 0 4px 6px rgba(84, 20, 56, 0.64);
-    appearance: none; /* Oculta la flecha predeterminada */
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    position: relative;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
 
-.selector-dia select:hover {
-    background-color: var(--primary-color);
-    color: #fff;
-}
-
-.selector-dia select:focus {
-    outline: none;
-    border-color: var(--highlight-text-color);
-    box-shadow: 0 0 10px rgba(39, 174, 96, 0.5);
-}
-
-.selector-dia {
-    position: relative;
-}
-
-.selector-dia::after {
-    content: "▼"; /* Añade una flecha personalizada */
-    font-size: 1rem;
-    color: var(--primary-color);
-    position: absolute;
-    right: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
-    pointer-events: none; /* Permite hacer clic en el selector sin interferencia */
-    transition: all 0.3s ease;
-}
-
-.selector-dia select:hover + ::after {
-    color: #fff;
-}
-
-.selector-dia select:focus + ::after {
-    color: var(--highlight-text-color);
+    .selector-dia select {
+        max-width: 100%;
+    }
 }
