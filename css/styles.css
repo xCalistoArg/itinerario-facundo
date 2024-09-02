@@ -1,16 +1,18 @@
+/* Variables de colores */
 :root {
     --primary-color: #2980b9;
     --secondary-color: #34495e;
     --background-color: rgba(255, 255, 255, 0.9);
     --border-color: #bdc3c7;
-    --highlight-color: #dff0d8;
-    --highlight-text-color: #27ae60;
+    --highlight-color: #27ae60;
+    --highlight-text-color: #fff;
     --hover-color: #2c3e50;
 }
 
+/* Estilos generales */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-image: url('https://pixabay.com/get/ga0ed61ff8ac74a10f1ca4fd7ba4cd5c005996ba30dec1fd1f69e0d2922fd19d0ca8bb666933b96a082b188469609cdab.jpg');
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJM-jIJTNuDD8kvXGTTmb3zSvpy7RArF30oA&s');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -39,6 +41,7 @@ p {
     color: var(--secondary-color);
 }
 
+/* Estilo del contenedor de itinerario */
 .itinerario {
     margin: 2rem auto;
     width: 90%;
@@ -68,7 +71,19 @@ p {
     opacity: 1;
     max-height: 1000px;
     position: relative; /* Cambia a posición relativa cuando se muestra */
-    visibility: visible; /* Hace visible el elemento */
+    visibility: visible;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .dia h2 {
@@ -99,6 +114,7 @@ p {
     color: #fff;
 }
 
+/* Selector de día */
 .selector-dia {
     margin: 1rem 0;
     text-align: center;
@@ -154,6 +170,7 @@ p {
     color: var(--highlight-text-color);
 }
 
+/* Iconos */
 .icon-only {
     width: 24px;
     height: 24px;
@@ -168,6 +185,18 @@ p {
     fill: var(--hover-color);
 }
 
+/* Estilos del calendario */
+#calendar {
+    max-width: 900px;
+    margin: 2rem auto;
+    background-color: var(--background-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    height: 600px; /* Asegura de especificar una altura */
+}
+
+/* Estilo del pie de página */
 footer {
     text-align: center;
     padding: 1rem 0;
@@ -183,6 +212,7 @@ footer p {
     color: #7f8c8d;
 }
 
+/* Estilo responsivo */
 @media (max-width: 768px) {
     h1 {
         font-size: 2.5rem;
@@ -203,5 +233,11 @@ footer p {
 
     .selector-dia select {
         max-width: 100%;
+    }
+
+    #calendar {
+        width: 100%;
+        padding: 1rem;
+        height: auto; /* Permite que el calendario sea más flexible en pantallas pequeñas */
     }
 }
