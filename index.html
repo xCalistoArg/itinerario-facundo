@@ -4,7 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Itinerario de Clases - Facundo Calisto</title>
+    
+    <!-- Estilos personalizados -->
     <link rel="stylesheet" href="css/styles.css">
+
+    <!-- FullCalendar CSS -->
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css' rel='stylesheet' />
 </head>
 <body>
     <header>
@@ -12,6 +17,7 @@
         <p>Bienvenido a mi página de horarios. Aquí podrás ver mi itinerario de clases y los momentos libres.</p>
     </header>
 
+    <!-- Selector de día -->
     <div class="selector-dia">
         <label for="dias">Selecciona un día:</label>
         <select id="dias">
@@ -26,76 +32,15 @@
         </select>
     </div>
 
+    <!-- Contenedor de itinerario -->
     <section class="itinerario">
         <div class="dia" data-dia="lunes">
             <h2>Lunes</h2>
-            <div class="horario libre">
-                <span>Libre</span>
+            <div class="horario">
+                <span>10:00 - 12:00</span>
                 <span>
                     <svg class="icon-only" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
                         <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm1 11h-4V7h2v4h2ZM12 20a8 8 0 1 1 8-8 8 8 0 0 1-8 8Z"></path>
-                    </svg>
-                    10:00 - 12:00
-                </span>
-            </div>
-            <div class="horario libre">
-                <span>Libre</span>
-                <span>
-                    <svg class="icon-only" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path>
-                    </svg>
-                    17:00 - 21:00
-                </span>
-            </div>
-        </div>
-
-        <div class="dia" data-dia="martes">
-            <h2>Martes</h2>
-            <div class="horario">
-                <span>10:00 - 12:00</span>
-                <span>
-                    <svg class="icon-only" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path>
-                    </svg>
-                    CLASES Abel.
-                </span>
-            </div>
-            <div class="horario">
-                <span>13:00 - 15:00</span>
-                <span>
-                    <svg class="icon-only" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path>
-                    </svg>
-                    CLASES Tita.
-                </span>
-            </div>
-            <div class="horario">
-                <span>15:00 - 16:00</span>
-                <span>
-                    <svg class="icon-only" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path>
-                    </svg>
-                    CLASES Trini.
-                </span>
-            </div>
-            <div class="horario libre">
-                <span>Libre</span>
-                <span>
-                    <svg class="icon-only" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path>
-                    </svg>
-                    17:30 - 21:30
-                </span>
-            </div>
-        </div>
-
-        <div class="dia" data-dia="miercoles">
-            <h2>Miércoles</h2>
-            <div class="horario">
-                <span>10:00 - 12:00</span>
-                <span>
-                    <svg class="icon-only" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path>
                     </svg>
                     CLASES A.
                 </span>
@@ -104,20 +49,86 @@
                 <span>Libre</span>
                 <span>
                     <svg class="icon-only" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path>
+                        <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm1 11h-4V7h2v4h2ZM12 20a8 8 0 1 1 8-8 8 8 0 0 1-8 8Z"></path>
+                    </svg>
+                    17:00 - 21:00
+                </span>
+            </div>
+        </div>
+
+        <!-- Repite para otros días -->
+        <!-- Martes -->
+        <div class="dia" data-dia="martes">
+            <h2>Martes</h2>
+            <div class="horario">
+                <span>10:00 - 12:00</span>
+                <span>
+                    <svg class="icon-only" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                        <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm1 11h-4V7h2v4h2ZM12 20a8 8 0 1 1 8-8 8 8 0 0 1-8 8Z"></path>
+                    </svg>
+                    CLASES Abel.
+                </span>
+            </div>
+            <div class="horario">
+                <span>13:00 - 15:00</span>
+                <span>
+                    <svg class="icon-only" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                        <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm1 11h-4V7h2v4h2ZM12 20a8 8 0 1 1 8-8 8 8 0 0 1-8 8Z"></path>
+                    </svg>
+                    CLASES Tita.
+                </span>
+            </div>
+            <div class="horario">
+                <span>15:00 - 16:00</span>
+                <span>
+                    <svg class="icon-only" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                        <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm1 11h-4V7h2v4h2ZM12 20a8 8 0 1 1 8-8 8 8 0 0 1-8 8Z"></path>
+                    </svg>
+                    CLASES Trini.
+                </span>
+            </div>
+            <div class="horario libre">
+                <span>Libre</span>
+                <span>
+                    <svg class="icon-only" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                        <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm1 11h-4V7h2v4h2ZM12 20a8 8 0 1 1 8-8 8 8 0 0 1-8 8Z"></path>
+                    </svg>
+                    17:30 - 21:30
+                </span>
+            </div>
+        </div>
+
+        <!-- Miércoles -->
+        <div class="dia" data-dia="miercoles">
+            <h2>Miércoles</h2>
+            <div class="horario">
+                <span>10:00 - 12:00</span>
+                <span>
+                    <svg class="icon-only" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                        <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm1 11h-4V7h2v4h2ZM12 20a8 8 0 1 1 8-8 8 8 0 0 1-8 8Z"></path>
+                    </svg>
+                    CLASES A.
+                </span>
+            </div>
+            <div class="horario libre">
+                <span>Libre</span>
+                <span>
+                    <svg class="icon-only" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                        <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm1 11h-4V7h2v4h2ZM12 20a8 8 0 1 1 8-8 8 8 0 0 1-8 8Z"></path>
                     </svg>
                     16:30 - 21:30
                 </span>
             </div>
         </div>
 
+        <!-- Jueves -->
         <div class="dia" data-dia="jueves">
             <h2>Jueves</h2>
             <div class="horario">
                 <span>10:00 - 12:00</span>
                 <span>
                     <svg class="icon-only" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path>
+                        <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm1 11h-4V7h2v4h2ZM12 20a8 8 0 1 1 8-8 8 8 0 0 1-8 8Z"></path>
                     </svg>
                     CLASES T.
                 </span>
@@ -126,7 +137,7 @@
                 <span>14:00 - 16:20</span>
                 <span>
                     <svg class="icon-only" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path>
+                        <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm1 11h-4V7h2v4h2ZM12 20a8 8 0 1 1 8-8 8 8 0 0 1-8 8Z"></path>
                     </svg>
                     CLASES B.
                 </span>
@@ -135,20 +146,21 @@
                 <span>Libre</span>
                 <span>
                     <svg class="icon-only" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path>
+                        <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm1 11h-4V7h2v4h2ZM12 20a8 8 0 1 1 8-8 8 8 0 0 1-8 8Z"></path>
                     </svg>
                     17:00 - 21:00
                 </span>
             </div>
         </div>
 
+        <!-- Viernes -->
         <div class="dia" data-dia="viernes">
             <h2>Viernes</h2>
             <div class="horario">
                 <span>10:00 - 12:00</span>
                 <span>
                     <svg class="icon-only" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path>
+                        <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm1 11h-4V7h2v4h2ZM12 20a8 8 0 1 1 8-8 8 8 0 0 1-8 8Z"></path>
                     </svg>
                     CLASES MABEL
                 </span>
@@ -157,20 +169,21 @@
                 <span>Libre</span>
                 <span>
                     <svg class="icon-only" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path>
+                        <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm1 11h-4V7h2v4h2ZM12 20a8 8 0 1 1 8-8 8 8 0 0 1-8 8Z"></path>
                     </svg>
                     17:00 - 21:00
                 </span>
             </div>
         </div>
 
+        <!-- Sábado -->
         <div class="dia" data-dia="sabado">
             <h2>Sábado</h2>
             <div class="horario">
                 <span>13:00 - 15:00</span>
                 <span>
                     <svg class="icon-only" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path>
+                        <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm1 11h-4V7h2v4h2ZM12 20a8 8 0 1 1 8-8 8 8 0 0 1-8 8Z"></path>
                     </svg>
                     CLASES CARLA
                 </span>
@@ -179,7 +192,7 @@
                 <span>15:00 - 17:00</span>
                 <span>
                     <svg class="icon-only" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path>
+                        <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm1 11h-4V7h2v4h2ZM12 20a8 8 0 1 1 8-8 8 8 0 0 1-8 8Z"></path>
                     </svg>
                     CLASES BAUTI
                 </span>
@@ -188,19 +201,20 @@
                 <span>Libre</span>
                 <span>
                     <svg class="icon-only" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path>
+                        <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm1 11h-4V7h2v4h2ZM12 20a8 8 0 1 1 8-8 8 8 0 0 1-8 8Z"></path>
                     </svg>
                     17:30 - 19:30
                 </span>
             </div>
         </div>
 
+        <!-- Domingo -->
         <div class="dia" data-dia="domingo">
             <h2>Domingo</h2>
             <div class="horario">
                 <span>
                     <svg class="icon-only" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path>
+                        <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm1 11h-4V7h2v4h2ZM12 20a8 8 0 1 1 8-8 8 8 0 0 1-8 8Z"></path>
                     </svg>
                     Día libre
                 </span>
@@ -208,10 +222,20 @@
         </div>
     </section>
 
+    <!-- Calendario -->
+    <section>
+        <h2>Calendario de Horarios</h2>
+        <div id="calendar"></div>
+    </section>
+
     <footer>
         <p>Facundo Calisto © 2024</p>
     </footer>
 
+    <!-- FullCalendar JS -->
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.js'></script>
+
+    <!-- JavaScript personalizado -->
     <script src="js/script.js"></script>
 </body>
 </html>
